@@ -1,5 +1,22 @@
 import sys
 import socket
+import string
+
+
+def check_pal(s):
+    s = s.strip().lower()
+    for ch in s:
+        s = s.replace(" ", "")
+        if ch in string.punctuation:
+            s = s.replace(ch, '')
+
+    print(s)
+    result = 'FALSE'
+
+    if s == s[::-1]:
+        result = 'TRUE'
+
+    return result
 
 
 def main():
@@ -32,9 +49,34 @@ def main():
                 r_port = server_udp_socket.getsockname()[1]
                 client_socket.send(str(r_port).encode('utf-8'))
 
-            else:
-                print("Inside else loop", flush=True)
-                client_socket.close()
+                print("Connected via UDP")
+                cl_msg_count = 1
+                address = " "  # address of udp client
+                print(f"Req_lim = {req_lim}")
+                while cl_msg_count <= req_lim:
+                    print(f"Count: {cl_msg_count}", flush=True)
+                    udp_msg, address = server_udp_socket.recvfrom(1024)
+                    print(f"UDP Message: {udp_msg.decode('utf-8')}", flush=True)
+                    cl_msg_count += 1
+
+                    # Check if string sent by client is a palindrome or not
+                    result = check_pal(udp_msg.decode('utf-8'))
+                    # Send back the result to the client
+                    server_udp_socket.sendto(result.encode('utf-8'), address)
+
+                    if cl_msg_count == req_lim + 1:
+                        print("Reached limit", flush=True)
+                        server_udp_socket.sendto("LIMIT".encode('utf-8'), address)
+                        server_udp_socket.close()
+                        break
+
+                    if udp_msg.decode('utf-8') == 'EXIT':
+                        print("Received exit", flush=True)
+                        break
+
+                server_udp_socket.close()
+
+            client_socket.close()
 
 
 if __name__ == '__main__':
