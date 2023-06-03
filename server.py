@@ -10,7 +10,6 @@ def check_pal(s):
         if ch in string.punctuation:
             s = s.replace(ch, '')
 
-    print(s)
     result = 'FALSE'
 
     if s == s[::-1]:
@@ -24,7 +23,7 @@ def main():
     num_arg = len(sys.argv)
     if num_arg != 3:
         print("Invalid arguments")
-        exit(1)
+        sys.exit(1)
     else:
         req_code = int(sys.argv[1])
         req_lim = int(sys.argv[2])
@@ -78,8 +77,10 @@ def main():
 
                 server_udp_socket.close()
             else:
+                print("Request Code does not match", flush=True)
                 client_socket.send("Incorrect Req Code".encode('utf-8'))
                 client_socket.close()
+                sys.exit(1)
 
 
 if __name__ == '__main__':
