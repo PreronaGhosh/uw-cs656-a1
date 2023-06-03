@@ -24,7 +24,7 @@ Parameters:
 <req_lim>           : Maximum number of strings that the server can process.
 <server_address>	: The name/IP of the machine that the server is running on.
 <n_port> 	  		: The negotiation port printed out by the server.
-<msg> 		  	    : The input message sent by the client to the server.
+<msg_n> 		  	: The input message sent by the client to the server.
 
 
 
