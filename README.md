@@ -15,8 +15,8 @@ Compilation:
 
 
 Execution steps:
-To run the server, execute command: ./server.sh <req_code> <req_lim>
-To run the client, execute command: ./client.sh <server_address> <n_port> <req_code> <msg_1> <msg_2> ... <msg_n>
+1. To run the server, execute command: ./server.sh <req_code> <req_lim>
+2. To run the client, execute command: ./client.sh <server_address> <n_port> <req_code> <msg_1> <msg_2> ... <msg_n>
 
 
 Parameters:
