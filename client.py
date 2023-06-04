@@ -3,6 +3,7 @@ import socket
 
 
 def main():
+
     n = len(sys.argv)  # stores the number of command line arguments
     words = []  # list of all the strings passed in the command line argument
     results = []  # list to store all results of palindrome check

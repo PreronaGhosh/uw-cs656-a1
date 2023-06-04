@@ -19,10 +19,10 @@ def check_pal(s):
 
 
 def main():
-    n_port = 0
+
     num_arg = len(sys.argv)
     if num_arg != 3:
-        print("Invalid arguments")
+        print("Invalid number of arguments provided")
         sys.exit(1)
     else:
         req_code = int(sys.argv[1])
@@ -84,4 +84,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit(1)
+
+
