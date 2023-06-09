@@ -27,5 +27,6 @@ Parameters:
 <msg_n> 		  	: The input message sent by the client to the server.
 
 
-
+Machine Environments:
+The program has been run and tested on a Windows 11 machine, ubuntu2204-002 and ubuntu2204-004 on the Ubuntu student servers at the University of Waterloo.
 
