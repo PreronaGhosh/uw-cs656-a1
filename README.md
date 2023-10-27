@@ -8,9 +8,11 @@ Simple program to explore socket programming using TCP and UDP sockets.
 
 ## Files
 
-    1. server.py and client.py are Python scripts to create a simple client-server program using TCP and UDP sockets.
-    2. server.sh and client.sh are scripts modified for running Python programs. When executed, it will call the above mentioned python files.
-    3. There is no Makefile provided as the programs are written in Python.
+`server.py & client.py` : Python scripts to create a simple client-server program using TCP and UDP sockets.
+
+`server.sh & client.sh` : Shell scripts for running Python programs. When executed, it will call the above mentioned python files.
+
+
 ## Compilation
 
     Not required as the programs are written in Python.
