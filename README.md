@@ -1,32 +1,51 @@
-CS 656 - Computer Networks - Spring 2023
-Assignment 1 - Socket Programming
-Prerona Ghosh 
-Student ID: 21048873
+
+# Socket Programming with TCP & UDP
+
+Simple program to explore socket programming using TCP and UDP sockets.
 
 
-Files:
-1. server.py and client.py are Python scripts to create a simple client-server program using TCP and UDP sockets.
-2. server.sh and client.sh are scripts modified for running Python programs. When executed, will call the above mentioned python files.
-3. There is no Makefile provided as the programs are written in Python.
 
 
-Compilation:
-1. Not required as the programs are written in Python.
+## Files
+
+    1. server.py and client.py are Python scripts to create a simple client-server program using TCP and UDP sockets.
+    2. server.sh and client.sh are scripts modified for running Python programs. When executed, it will call the above mentioned python files.
+    3. There is no Makefile provided as the programs are written in Python.
+## Compilation
+
+    Not required as the programs are written in Python.
 
 
-Execution steps:
-1. To run the server, execute command: ./server.sh <req_code> <req_lim>
-2. To run the client, execute command: ./client.sh <server_address> <n_port> <req_code> <msg_1> <msg_2> ... <msg_n>
+## Run Locally
 
 
-Parameters:
-<req_code>          : An integer validation code used by client and server.
-<req_lim>           : Maximum number of strings that the server can process.
-<server_address>	: The name/IP of the machine that the server is running on.
-<n_port> 	  		: The negotiation port printed out by the server.
-<msg_n> 		  	: The input message sent by the client to the server.
+To run the server
+
+```bash
+  ./server.sh <req_code> <req_lim>
+```
+
+To run the client
+
+```bash
+  ./client.sh <server_address> <n_port> <req_code> <msg_1> <msg_2> ... <msg_n>
+```
 
 
-Machine Environments:
+## Parameters
+
+To run this project, you will need to add the following parameters to your CLI commands/scripts: 
+
+`<req_code>` : An integer validation code used by client and server
+
+`<req_lim>` : Maximum number of strings that the server can process
+
+`<server_address>` : The name/IP of the machine that the server is running on
+
+`<n_port>` : The negotiation port printed out by the server
+
+`<msg_n>` : The input message sent by the client to the server
+
+## Machine Environments
+
 The program has been run and tested on a Windows 11 machine, ubuntu2204-002 and ubuntu2204-004 on the Ubuntu student servers at the University of Waterloo.
-
